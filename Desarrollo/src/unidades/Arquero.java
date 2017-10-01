@@ -1,5 +1,7 @@
 package unidades;
 
+import items.Carcaj;
+
 public class Arquero extends Unidad {
 
 	private int cantFlechas = 20;
@@ -24,8 +26,8 @@ public class Arquero extends Unidad {
 		}
 
 	}
-	public void recargarFechas() {
-		this.cantFlechas+=6;
+	public void recargarFechas(Carcaj carcaj) {
+		this.cantFlechas+=carcaj.getCantDeFlechas();
 	}
 
 }
