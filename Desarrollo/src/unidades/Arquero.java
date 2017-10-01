@@ -6,7 +6,7 @@ public class Arquero extends Unidad {
 
 	public Arquero(final int posX, final int posY) {
 		this.salud = 50;
-		this.daño = 5;
+		this.danio = 5;
 		this.rangoInfAtqADist = 2;
 		this.rangoSupAtqADist = 5;
 		this.posX = posX;
@@ -19,7 +19,7 @@ public class Arquero extends Unidad {
 		double distHastaUnid = distanciaHasta(otraUnidad);
 		if (distHastaUnid >= this.rangoInfAtqADist && distHastaUnid <= rangoSupAtqADist && otraUnidad.salud > 0
 				&& cantFlechas >= 1) {
-			otraUnidad.esAtacado(daño);
+			otraUnidad.esAtacado(danio);
 			this.cantFlechas--;
 		}
 

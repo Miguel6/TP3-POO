@@ -1,10 +1,10 @@
 package unidades;
 
 public abstract class Unidad {
-
+	
 	protected int salud;
 	protected int rangoInfAtqADist, rangoSupAtqADist;
-	protected int daño;
+	protected int danio;
 	protected int posX;
 	protected int posY;
 
@@ -18,8 +18,8 @@ public abstract class Unidad {
 		return Math.sqrt(difEX+difEY);		
 	}
 	
-	protected void esAtacado(int dañoRecibido) {
-		this.salud-=dañoRecibido;
+	protected void esAtacado(int danioRecibido) {
+		this.salud-=danioRecibido;
 	}
 
 	public int getSalud() {
@@ -27,7 +27,7 @@ public abstract class Unidad {
 	}
 
 	public int getDaño() {
-		return this.daño;
+		return this.danio;
 	}
 
 	public int getPosX() {
