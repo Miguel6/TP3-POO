@@ -11,7 +11,7 @@ public class Caballero extends Unidad {
 
 	public Caballero(final int posX, final int posY) {
 		this.salud = 200;
-		this.daño = 50;
+		this.danio = 50;
 		this.rangoInfAtqADist = 1;
 		this.rangoSupAtqADist = 2;
 		this.posX = posX;
@@ -24,7 +24,7 @@ public class Caballero extends Unidad {
 		double distHastaUnid = distanciaHasta(otraUnidad);
 		if (distHastaUnid >= this.rangoInfAtqADist && distHastaUnid <= rangoSupAtqADist && otraUnidad.salud > 0
 				&& caballo.getEstado() instanceof Normal) {
-			otraUnidad.esAtacado(daño);
+			otraUnidad.esAtacado(danio);
 			this.caballo.jineteAtaco();
 		}
 
