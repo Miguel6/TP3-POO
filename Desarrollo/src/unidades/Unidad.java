@@ -18,6 +18,10 @@ public abstract class Unidad {
 		double difEY=Math.pow(otraUnidad.getPosY()-this.posY,2);
 		return Math.sqrt(difEX+difEY);		
 	}
+	
+	protected void esAtacado(int dañoRecibido) {
+		this.salud-=dañoRecibido;
+	}
 
 	public int getSalud() {
 		return this.salud;
