@@ -2,6 +2,8 @@ package unidades;
 
 public class Soldado extends Unidad {
 
+	private int energia;
+
 	public Soldado(final int posX, final int posY) {
 		this.salud = 200;
 		this.energia = 100;

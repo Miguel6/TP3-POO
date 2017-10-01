@@ -3,7 +3,6 @@ package unidades;
 public abstract class Unidad {
 
 	protected int salud;
-	protected int energia;
 	protected int rangoInfAtqADistancia, rangoSupAtqADistancia;
 	protected int daño;
 	protected int posX;
@@ -29,10 +28,6 @@ public abstract class Unidad {
 
 	public int getDaño() {
 		return this.daño;
-	}
-
-	public int getEnergia() {
-		return this.energia;
 	}
 
 	public int getPosX() {
