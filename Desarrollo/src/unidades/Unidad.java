@@ -3,7 +3,7 @@ package unidades;
 public abstract class Unidad {
 
 	protected int salud;
-	protected int rangoInfAtqADistancia, rangoSupAtqADistancia;
+	protected int rangoInfAtqADist, rangoSupAtqADist;
 	protected int daño;
 	protected int posX;
 	protected int posY;

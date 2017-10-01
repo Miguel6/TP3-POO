@@ -8,8 +8,8 @@ public class Soldado extends Unidad {
 		this.salud = 200;
 		this.energia = 100;
 		this.daño = 10;
-		this.rangoInfAtqADistancia = 0;
-		this.rangoSupAtqADistancia = 0;
+		this.rangoInfAtqADist = 0;
+		this.rangoSupAtqADist = 0;
 		this.posX = posX;
 		this.posY = posY;
 	}
