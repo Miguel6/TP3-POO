@@ -1,7 +1,7 @@
 package unidades;
 
 import monturas.caballos.Caballo;
-import monturas.caballos.Normal;
+import monturas.caballos.Rebelde;
 
 public class Caballero extends Unidad {
 
@@ -20,17 +20,18 @@ public class Caballero extends Unidad {
 	}
 
 	@Override
-	public void atacarA(Unidad otraUnidad) {
+	public void atacarA(Unidad otraUnidad) { 
 		double distHastaUnid = distanciaHasta(otraUnidad);
+
 		if (distHastaUnid >= this.rangoInfAtqADist && distHastaUnid <= rangoSupAtqADist && otraUnidad.salud > 0
-				&& caballo.getEstado() instanceof Normal) {
+				&& !caballo.getEstado().equals(new Rebelde())) {
 			otraUnidad.esAtacado(danio);
 			this.caballo.jineteAtaco();
 		}
 
 	}
 
-	public void darDeBeberA(Caballo caballo) {
+	public void darDeBeberACaballo() {
 		if (this.cantPocAgua >= 1) {
 			caballo.beber();
 			this.cantPocAgua--;
