@@ -16,9 +16,9 @@ public class Arquero extends Unidad {
 
 	@Override
 	public void atacarA(Unidad otraUnidad) {
-		double distanciaHastaUnidad = distanciaHasta(otraUnidad);
-		if (distanciaHastaUnidad >= this.rangoInfAtqADist && distanciaHastaUnidad <= rangoSupAtqADist
-				&& otraUnidad.salud > 0 && cantFlechas>=1) {
+		double distHastaUnid = distanciaHasta(otraUnidad);
+		if (distHastaUnid >= this.rangoInfAtqADist && distHastaUnid <= rangoSupAtqADist && otraUnidad.salud > 0
+				&& cantFlechas >= 1) {
 			otraUnidad.esAtacado(daño);
 			this.cantFlechas--;
 		}
