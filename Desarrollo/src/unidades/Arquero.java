@@ -24,5 +24,8 @@ public class Arquero extends Unidad {
 		}
 
 	}
+	public void recargarFechas() {
+		this.cantFlechas+=6;
+	}
 
 }
