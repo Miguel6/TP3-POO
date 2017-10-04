@@ -2,6 +2,7 @@ package unidades;
 
 import monturas.caballos.Caballo;
 import monturas.caballos.Rebelde;
+import posicion.Punto;
 
 public class Caballero extends Unidad {
 
@@ -9,27 +10,14 @@ public class Caballero extends Unidad {
 
 	private int cantPocAgua = 1;
 
-	public Caballero(final int posX, final int posY) {
+	public Caballero(final Punto posi) {
 		this.salud = 200;
 		this.danio = 50;
 		this.rangoInfAtqADist = 1;
 		this.rangoSupAtqADist = 2;
-		this.posX = posX;
-		this.posY = posY;
+		this.posi = posi;
 
-	}
-
-	@Override
-	public void atacarA(Unidad otraUnidad) { 
-		double distHastaUnid = distanciaHasta(otraUnidad);
-
-		if (distHastaUnid >= this.rangoInfAtqADist && distHastaUnid <= rangoSupAtqADist && otraUnidad.salud > 0
-				&& !caballo.getEstado().equals(new Rebelde())) {
-			otraUnidad.esAtacado(danio);
-			this.caballo.jineteAtaco();
-		}
-
-	}
+	}	
 
 	public void darDeBeberACaballo() {
 		if (this.cantPocAgua >= 1) {
@@ -39,4 +27,14 @@ public class Caballero extends Unidad {
 
 	}
 
+	@Override
+	protected boolean puedoAtacar(Unidad unit) {
+		double distHastaUnid = posi.distanciaCon(unit.getPosi());
+
+		if (distHastaUnid >= this.rangoInfAtqADist && distHastaUnid <= rangoSupAtqADist && unit.salud > 0
+				&& !caballo.getEstado().equals(new Rebelde())) 
+			return true;
+		
+		return false;
+	}
 }

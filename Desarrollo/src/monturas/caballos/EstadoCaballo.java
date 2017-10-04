@@ -9,7 +9,7 @@ public abstract class EstadoCaballo {
 		return this.cantDeAtaques;
 	}
 	public boolean equals(EstadoCaballo eC) {
-		return (eC.cantDeAtaques ==this.cantDeAtaques);
+		return (eC.cantDeAtaques == this.cantDeAtaques);
 	}
 	public void jineteAtaco() {
 		this.cantDeAtaques++;

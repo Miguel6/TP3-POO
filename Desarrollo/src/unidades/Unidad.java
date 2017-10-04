@@ -1,40 +1,59 @@
 package unidades;
 
-public abstract class Unidad {
+import items.UsarConsumible;
+import posicion.Punto;
+
+public abstract class Unidad implements UsarConsumible {
 	
 	protected int salud;
 	protected int rangoInfAtqADist, rangoSupAtqADist;
 	protected int danio;
-	protected int posX;
-	protected int posY;
+	protected Punto posi; 
+	
 
 	// Metodos Abstractos
-	protected abstract void atacarA(Unidad otraUnidad);
+	protected abstract boolean puedoAtacar(Unidad unit);
 
+	
 	// Metodos Implementados
-	protected double distanciaHasta(Unidad otraUnidad) {
-		double difEX=Math.pow(otraUnidad.getPosX()-this.posX,2);
-		double difEY=Math.pow(otraUnidad.getPosY()-this.posY,2);
-		return Math.sqrt(difEX+difEY);		
+	public boolean atacarA(Unidad otraUnidad){
+		if(puedoAtacar(otraUnidad)){
+			otraUnidad.recibirDanio( this.calcularDanioPropio() );
+			return true;
+		}
+		return false;
 	}
 	
-	protected void esAtacado(int danioRecibido) {
-		this.salud-=danioRecibido;
+	
+	protected int calcularDanioPropio(){
+		return this.danio;
 	}
+	
+	
+	protected int calcularDanioRecibido(int danioOponente){
+		return danioOponente;
+	}
+	
+
+	protected void recibirDanio(int danioOponente){
+		int danioNeto= this.calcularDanioRecibido( danioOponente );
+		
+		if(this.salud - danioNeto <= 0)
+			this.salud = 0;
+		else
+			this.salud -= danioNeto;
+	}
+		
 
 	public int getSalud() {
 		return this.salud;
 	}
 
-	public int getDaño() {
+	public int getDanio() {
 		return this.danio;
 	}
 
-	public int getPosX() {
-		return this.posX;
-	}
-
-	public int getPosY() {
-		return this.posY;
+	public Punto getPosi(){
+		return this.posi;
 	}
 }

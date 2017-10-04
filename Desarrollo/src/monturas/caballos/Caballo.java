@@ -5,6 +5,7 @@ public class Caballo {
 
 	private EstadoCaballo estado = new Normal();
 
+	
 	public void jineteAtaco() {
 		estado.jineteAtaco();
 	}
